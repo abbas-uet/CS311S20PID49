@@ -1,2 +1,2 @@
 # CS311S20PID49
-Activity Scheduling Tool for Analysis of Algorithm. 
+File Compression Tool for Analysis of Algorithm. 

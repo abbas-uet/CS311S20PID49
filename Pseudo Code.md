@@ -15,9 +15,13 @@ It takes an NodesArray as Input of Nodes having Frequency ,Character and data an
 
 
  HuffmanTree(nodearr) 
+ 
 		if (nodearr.First == nodearr.Tail) 
+			
 			top = nodearr.getTop
+			
 			return
+			
 		else 
 			node = new HeapNode
 			
@@ -45,11 +49,13 @@ Encode(root,X,index )
 if (root->left) 
 
      X[index] = '0'
+     
      Encode(root->left, X, index + 1)
 
 if (root->right)
 
      X[index] = '1'
+     
      Encode(root->right, X, index + 1)
 
 if (!root->left && !root->right)

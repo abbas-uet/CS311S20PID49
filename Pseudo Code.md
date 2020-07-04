@@ -65,3 +65,24 @@ newHuffNode = new Huffcodes(root->getcharacter(),code, root->getfrequency())    
 huffcode[codeindex] = newHuffcode;                    // array containing info of coding scheme information of characters.
 
 codeIndex++;                                         //index of array containg coding scheme information of character.
+
+//Decoding
+
+//It will take a root node of Huffman tree and String of Binary Bits as an Input and gives the Original String (Decoded String) as an Output.
+
+Decode(root,X) 
+
+for (i = 0 to X.size)
+	
+	if (X[i] == '0')
+	
+		root = root->left;
+	
+	else
+		root = root->right;
+
+	if (root->left == NULL and root->right == NULL)
+	
+		cout<<root->getcharacter();
+		
+		root= top;

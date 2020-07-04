@@ -10,6 +10,8 @@ The Pseudo code of File Compression Tool consists of Three Parts.
 Huffman Tree Build
 The Huffman Tree Build Pseudo code is as given as:
 It takes an NodesArray as Input of Nodes having Frequency ,Character and data and returns the Pointer to top of the Array.
+
+
  HuffmanTree(nodearr) 
 		if (nodearr.First == nodearr.Tail) 
 			top = nodearr.getTop
@@ -21,6 +23,8 @@ It takes an NodesArray as Input of Nodes having Frequency ,Character and data an
           newnode->setfrequency(newnode->left->getfrequency() +        newnode->right->getfrequency())
 			nodearr.add(newnode)
 			HuffmanTree(nodearr)
+
+
 
 Encoding
 
@@ -43,6 +47,8 @@ if (root->right)
 
 if (!root->left && !root->right)
 
-newHuffNode = new Huffcodes(root->getcharacter(),code, root->getfrequency())   //new node containg information of character.
-huffcode[codeindex] = newHuffcode;  // array containing info of coding scheme information of characters.
-codeIndex++;  //index of array containg coding scheme information of character.
+newHuffNode = new Huffcodes(root->getcharacter(),code, root->getfrequency())       //new node containg information of character.
+
+huffcode[codeindex] = newHuffcode;                    // array containing info of coding scheme information of characters.
+
+codeIndex++;                                         //index of array containg coding scheme information of character.

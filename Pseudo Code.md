@@ -8,7 +8,9 @@ The Pseudo code of File Compression Tool consists of Three Parts.
 •	Decoding of the string of bits
 
 Huffman Tree Build
+
 The Huffman Tree Build Pseudo code is as given as:
+
 It takes an NodesArray as Input of Nodes having Frequency ,Character and data and returns the Pointer to top of the Array.
 
 
@@ -18,10 +20,15 @@ It takes an NodesArray as Input of Nodes having Frequency ,Character and data an
 			return
 		else 
 			node = new HeapNode
+			
 			newnode->left = nodearr.getmin()
-			newnode->right = nodearr.getmin()		
-          newnode->setfrequency(newnode->left->getfrequency() +        newnode->right->getfrequency())
+			
+			newnode->right = nodearr.getmin()
+			
+                        newnode->setfrequency(newnode->left->getfrequency() + newnode->right->getfrequency())
+			
 			nodearr.add(newnode)
+			
 			HuffmanTree(nodearr)
 
 

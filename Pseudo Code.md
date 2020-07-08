@@ -11,7 +11,7 @@ Huffman Tree Build
 
 The Huffman Tree Build Pseudo code is as given as:
 
-It takes an NodesArray as Input of Nodes having Frequency ,Character and data and returns the Pointer to top of the Array.
+It takes an NodesArray A Priority Que having minimum at the top and maximum at the end of the Priority Que as Input of Nodes having Frequency ,Character and data and returns the Pointer to top of the Array.
 
 
  HuffmanTree(nodearr) 

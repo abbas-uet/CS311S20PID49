@@ -25,12 +25,12 @@ namespace File_Compression_Tool
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            label3.ForeColor = Color.Red;
+            show_In_Folder_link_lb.ForeColor = Color.Red;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            label3.ForeColor = Color.White;
+            show_In_Folder_link_lb.ForeColor = Color.White;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace File_Compression_Tool
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string text = File.ReadAllText(openFileDialog.FileName);
-                richTextBox2.Text = text;
+                textCompresssedFile.Text = text;
             }
         }
 
@@ -61,7 +61,7 @@ namespace File_Compression_Tool
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string text = File.ReadAllText(openFileDialog.FileName);
-                richTextBox1.Text = text;
+                textCodingSchemeFile.Text = text;
             }
         }
     }

@@ -13,6 +13,10 @@ namespace File_Compression_Tool
 {
     public partial class Form2 : Form
     {
+        classes.HuffmanCodingEncoding huffmanCodingEncoding=new classes.HuffmanCodingEncoding();
+        public Boolean[] codeofCharacter = new Boolean[256];
+        string normalText;
+        static int SIZE = 128;
         public Form2()
         {
             InitializeComponent();
@@ -20,12 +24,12 @@ namespace File_Compression_Tool
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            label3.ForeColor = Color.Red;
+            showINFolderLinkLb.ForeColor = Color.Red;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            label3.ForeColor = Color.White;
+            showINFolderLinkLb.ForeColor = Color.White;
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -40,8 +44,8 @@ namespace File_Compression_Tool
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string text = File.ReadAllText(openFileDialog.FileName);
-                richTextBox1.Text = text;
+                normalText = File.ReadAllText(openFileDialog.FileName);
+                textOfFile.Text = normalText;
             }
         }
 
@@ -49,6 +53,24 @@ namespace File_Compression_Tool
         {
             this.Hide();
             new Form1().Show();
+        }
+        private int[] getFrequency(string str)
+        {
+            int[] frequecyArr = new int[SIZE];
+            int n = str.Length;
+            for(int i = 0; i < n; i++)
+            {
+                frequecyArr[str[i]]++;
+            }
+            return frequecyArr;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText), normalText.Length);
+            huffmanCodingEncoding.buildTree(huffmanCodingEncoding.nodearr);
+            huffmanCodingEncoding.Encoding(huffmanCodingEncoding.top, codeofCharacter, 0);
+
         }
     }
 }

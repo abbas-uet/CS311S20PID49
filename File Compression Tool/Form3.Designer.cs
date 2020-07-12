@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.browsCodingScheme = new System.Windows.Forms.Button();
+            this.show_In_Folder_link_lb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.merge = new System.Windows.Forms.Button();
+            this.browseCompressed = new System.Windows.Forms.Button();
+            this.deCompress = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.textCompresssedFile = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textCodingSchemeFile = new System.Windows.Forms.RichTextBox();
+            this.back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -58,35 +58,35 @@
             this.label4.TabIndex = 24;
             this.label4.Text = "De Compress";
             // 
-            // button4
+            // browsCodingScheme
             // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(231, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 40);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Code Scheme File";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.browsCodingScheme.BackColor = System.Drawing.Color.Red;
+            this.browsCodingScheme.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.browsCodingScheme.FlatAppearance.BorderSize = 0;
+            this.browsCodingScheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browsCodingScheme.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browsCodingScheme.ForeColor = System.Drawing.Color.White;
+            this.browsCodingScheme.Location = new System.Drawing.Point(231, 14);
+            this.browsCodingScheme.Name = "browsCodingScheme";
+            this.browsCodingScheme.Size = new System.Drawing.Size(164, 40);
+            this.browsCodingScheme.TabIndex = 23;
+            this.browsCodingScheme.Text = "Code Scheme File";
+            this.browsCodingScheme.UseVisualStyleBackColor = false;
+            this.browsCodingScheme.Click += new System.EventHandler(this.button4_Click);
             // 
-            // label3
+            // show_In_Folder_link_lb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(780, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 18);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Show in folder";
-            this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
-            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+            this.show_In_Folder_link_lb.AutoSize = true;
+            this.show_In_Folder_link_lb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.show_In_Folder_link_lb.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.show_In_Folder_link_lb.ForeColor = System.Drawing.Color.White;
+            this.show_In_Folder_link_lb.Location = new System.Drawing.Point(780, 55);
+            this.show_In_Folder_link_lb.Name = "show_In_Folder_link_lb";
+            this.show_In_Folder_link_lb.Size = new System.Drawing.Size(113, 18);
+            this.show_In_Folder_link_lb.TabIndex = 22;
+            this.show_In_Folder_link_lb.Text = "Show in folder";
+            this.show_In_Folder_link_lb.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+            this.show_In_Folder_link_lb.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
             // label2
             // 
@@ -99,51 +99,51 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Bonus Task";
             // 
-            // button3
+            // merge
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(674, 50);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 30);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Merge";
-            this.button3.UseVisualStyleBackColor = false;
+            this.merge.BackColor = System.Drawing.Color.Red;
+            this.merge.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.merge.FlatAppearance.BorderSize = 0;
+            this.merge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.merge.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.merge.ForeColor = System.Drawing.Color.White;
+            this.merge.Location = new System.Drawing.Point(674, 50);
+            this.merge.Name = "merge";
+            this.merge.Size = new System.Drawing.Size(86, 30);
+            this.merge.TabIndex = 20;
+            this.merge.Text = "Merge";
+            this.merge.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // browseCompressed
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(19, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(206, 40);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Browse Compressed File";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.browseCompressed.BackColor = System.Drawing.Color.Red;
+            this.browseCompressed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.browseCompressed.FlatAppearance.BorderSize = 0;
+            this.browseCompressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browseCompressed.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browseCompressed.ForeColor = System.Drawing.Color.White;
+            this.browseCompressed.Location = new System.Drawing.Point(19, 14);
+            this.browseCompressed.Name = "browseCompressed";
+            this.browseCompressed.Size = new System.Drawing.Size(206, 40);
+            this.browseCompressed.TabIndex = 19;
+            this.browseCompressed.Text = "Browse Compressed File";
+            this.browseCompressed.UseVisualStyleBackColor = false;
+            this.browseCompressed.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // deCompress
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(401, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 40);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "De Compress";
-            this.button1.UseVisualStyleBackColor = false;
+            this.deCompress.BackColor = System.Drawing.Color.Red;
+            this.deCompress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deCompress.FlatAppearance.BorderSize = 0;
+            this.deCompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deCompress.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deCompress.ForeColor = System.Drawing.Color.White;
+            this.deCompress.Location = new System.Drawing.Point(401, 14);
+            this.deCompress.Name = "deCompress";
+            this.deCompress.Size = new System.Drawing.Size(124, 40);
+            this.deCompress.TabIndex = 18;
+            this.deCompress.Text = "De Compress";
+            this.deCompress.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -157,62 +157,62 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "File:";
             // 
-            // richTextBox2
+            // textCompresssedFile
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(333, 316);
-            this.richTextBox2.TabIndex = 16;
-            this.richTextBox2.Text = "Compressed File:";
+            this.textCompresssedFile.Location = new System.Drawing.Point(0, 0);
+            this.textCompresssedFile.Name = "textCompresssedFile";
+            this.textCompresssedFile.Size = new System.Drawing.Size(333, 316);
+            this.textCompresssedFile.TabIndex = 16;
+            this.textCompresssedFile.Text = "Compressed File:";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.richTextBox2);
+            this.panel1.Controls.Add(this.textCodingSchemeFile);
+            this.panel1.Controls.Add(this.textCompresssedFile);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.merge);
+            this.panel1.Controls.Add(this.show_In_Folder_link_lb);
             this.panel1.Location = new System.Drawing.Point(41, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(904, 316);
             this.panel1.TabIndex = 25;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // button5
+            // textCodingSchemeFile
             // 
-            this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 34);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.textCodingSchemeFile.Location = new System.Drawing.Point(339, 0);
+            this.textCodingSchemeFile.Name = "textCodingSchemeFile";
+            this.textCodingSchemeFile.Size = new System.Drawing.Size(325, 316);
+            this.textCodingSchemeFile.TabIndex = 23;
+            this.textCodingSchemeFile.Text = "Code Scheme File:";
+            // 
+            // back
+            // 
+            this.back.BackColor = System.Drawing.Color.Red;
+            this.back.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.back.FlatAppearance.BorderSize = 0;
+            this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.back.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.back.ForeColor = System.Drawing.Color.White;
+            this.back.Location = new System.Drawing.Point(12, 12);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(60, 34);
+            this.back.TabIndex = 35;
+            this.back.Text = "Back";
+            this.back.UseVisualStyleBackColor = false;
+            this.back.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.browseCompressed);
+            this.panel2.Controls.Add(this.deCompress);
+            this.panel2.Controls.Add(this.browsCodingScheme);
             this.panel2.Location = new System.Drawing.Point(41, 442);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(904, 68);
             this.panel2.TabIndex = 36;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(339, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(325, 316);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "Code Scheme File:";
             // 
             // Form3
             // 
@@ -222,7 +222,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 522);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -240,17 +240,17 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button browsCodingScheme;
+        private System.Windows.Forms.Label show_In_Folder_link_lb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button merge;
+        private System.Windows.Forms.Button browseCompressed;
+        private System.Windows.Forms.Button deCompress;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox textCompresssedFile;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button back;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox textCodingSchemeFile;
     }
 }

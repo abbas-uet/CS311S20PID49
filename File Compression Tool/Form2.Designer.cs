@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.showINFolderLinkLb = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mergeButton = new System.Windows.Forms.Button();
+            this.browsFile = new System.Windows.Forms.Button();
+            this.compressButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.textOfFile = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,20 +56,20 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Compress";
             // 
-            // label3
+            // showINFolderLinkLb
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(747, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 18);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "Show in folder";
-            this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
-            this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
+            this.showINFolderLinkLb.AutoSize = true;
+            this.showINFolderLinkLb.BackColor = System.Drawing.Color.Transparent;
+            this.showINFolderLinkLb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.showINFolderLinkLb.Font = new System.Drawing.Font("Baskerville Old Face", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showINFolderLinkLb.ForeColor = System.Drawing.Color.White;
+            this.showINFolderLinkLb.Location = new System.Drawing.Point(747, 52);
+            this.showINFolderLinkLb.Name = "showINFolderLinkLb";
+            this.showINFolderLinkLb.Size = new System.Drawing.Size(113, 18);
+            this.showINFolderLinkLb.TabIndex = 31;
+            this.showINFolderLinkLb.Text = "Show in folder";
+            this.showINFolderLinkLb.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
+            this.showINFolderLinkLb.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
             // label2
             // 
@@ -83,51 +83,52 @@
             this.label2.TabIndex = 30;
             this.label2.Text = "Bonus Task";
             // 
-            // button3
+            // mergeButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(631, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 30);
-            this.button3.TabIndex = 29;
-            this.button3.Text = "Merge";
-            this.button3.UseVisualStyleBackColor = false;
+            this.mergeButton.BackColor = System.Drawing.Color.Red;
+            this.mergeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mergeButton.FlatAppearance.BorderSize = 0;
+            this.mergeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mergeButton.Font = new System.Drawing.Font("Baskerville Old Face", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mergeButton.ForeColor = System.Drawing.Color.White;
+            this.mergeButton.Location = new System.Drawing.Point(631, 47);
+            this.mergeButton.Name = "mergeButton";
+            this.mergeButton.Size = new System.Drawing.Size(86, 30);
+            this.mergeButton.TabIndex = 29;
+            this.mergeButton.Text = "Merge";
+            this.mergeButton.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // browsFile
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(80, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 40);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Browse File";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.browsFile.BackColor = System.Drawing.Color.Red;
+            this.browsFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.browsFile.FlatAppearance.BorderSize = 0;
+            this.browsFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.browsFile.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.browsFile.ForeColor = System.Drawing.Color.White;
+            this.browsFile.Location = new System.Drawing.Point(80, 14);
+            this.browsFile.Name = "browsFile";
+            this.browsFile.Size = new System.Drawing.Size(155, 40);
+            this.browsFile.TabIndex = 28;
+            this.browsFile.Text = "Browse File";
+            this.browsFile.UseVisualStyleBackColor = false;
+            this.browsFile.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // compressButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(241, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 40);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Compress";
-            this.button1.UseVisualStyleBackColor = false;
+            this.compressButton.BackColor = System.Drawing.Color.Red;
+            this.compressButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.compressButton.FlatAppearance.BorderSize = 0;
+            this.compressButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.compressButton.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compressButton.ForeColor = System.Drawing.Color.White;
+            this.compressButton.Location = new System.Drawing.Point(241, 14);
+            this.compressButton.Name = "compressButton";
+            this.compressButton.Size = new System.Drawing.Size(124, 40);
+            this.compressButton.TabIndex = 27;
+            this.compressButton.Text = "Compress";
+            this.compressButton.UseVisualStyleBackColor = false;
+            this.compressButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -141,47 +142,47 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "File:";
             // 
-            // richTextBox1
+            // textOfFile
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(455, 300);
-            this.richTextBox1.TabIndex = 25;
-            this.richTextBox1.Text = "";
+            this.textOfFile.Location = new System.Drawing.Point(0, 0);
+            this.textOfFile.Name = "textOfFile";
+            this.textOfFile.Size = new System.Drawing.Size(455, 300);
+            this.textOfFile.TabIndex = 25;
+            this.textOfFile.Text = "";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.textOfFile);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.showINFolderLinkLb);
+            this.panel1.Controls.Add(this.mergeButton);
             this.panel1.Location = new System.Drawing.Point(40, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 301);
             this.panel1.TabIndex = 33;
             // 
-            // button4
+            // backButton
             // 
-            this.button4.BackColor = System.Drawing.Color.Red;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(59, 34);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Back";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.backButton.BackColor = System.Drawing.Color.Red;
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backButton.Font = new System.Drawing.Font("Baskerville Old Face", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.Color.White;
+            this.backButton.Location = new System.Drawing.Point(12, 12);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(59, 34);
+            this.backButton.TabIndex = 34;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.browsFile);
+            this.panel2.Controls.Add(this.compressButton);
             this.panel2.Location = new System.Drawing.Point(40, 408);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(870, 68);
@@ -195,7 +196,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 522);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
@@ -213,15 +214,15 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label showINFolderLinkLb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button mergeButton;
+        private System.Windows.Forms.Button browsFile;
+        private System.Windows.Forms.Button compressButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox textOfFile;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel panel2;
     }
 }

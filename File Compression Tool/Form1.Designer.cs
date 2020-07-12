@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.mainDecompress = new System.Windows.Forms.Button();
+            this.mainCompress = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -53,46 +53,46 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.mainDecompress);
+            this.panel1.Controls.Add(this.mainCompress);
             this.panel1.Location = new System.Drawing.Point(240, 127);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 289);
             this.panel1.TabIndex = 9;
             // 
-            // button2
+            // mainDecompress
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(32, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(254, 68);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "De Compress";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.mainDecompress.BackColor = System.Drawing.Color.Red;
+            this.mainDecompress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainDecompress.FlatAppearance.BorderSize = 0;
+            this.mainDecompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainDecompress.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainDecompress.ForeColor = System.Drawing.Color.White;
+            this.mainDecompress.Location = new System.Drawing.Point(32, 150);
+            this.mainDecompress.Name = "mainDecompress";
+            this.mainDecompress.Size = new System.Drawing.Size(254, 68);
+            this.mainDecompress.TabIndex = 1;
+            this.mainDecompress.Text = "De Compress";
+            this.mainDecompress.UseVisualStyleBackColor = false;
+            this.mainDecompress.Click += new System.EventHandler(this.button2_Click);
+            this.mainDecompress.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
-            // button1
+            // mainCompress
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(32, 54);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 67);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Compress";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.mainCompress.BackColor = System.Drawing.Color.Red;
+            this.mainCompress.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainCompress.FlatAppearance.BorderSize = 0;
+            this.mainCompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainCompress.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainCompress.ForeColor = System.Drawing.Color.White;
+            this.mainCompress.Location = new System.Drawing.Point(32, 54);
+            this.mainCompress.Name = "mainCompress";
+            this.mainCompress.Size = new System.Drawing.Size(254, 67);
+            this.mainCompress.TabIndex = 0;
+            this.mainCompress.Text = "Compress";
+            this.mainCompress.UseVisualStyleBackColor = false;
+            this.mainCompress.Click += new System.EventHandler(this.button1_Click);
+            this.mainCompress.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             // 
             // panel2
             // 
@@ -126,8 +126,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button mainDecompress;
+        private System.Windows.Forms.Button mainCompress;
         private System.Windows.Forms.Panel panel2;
     }
 }

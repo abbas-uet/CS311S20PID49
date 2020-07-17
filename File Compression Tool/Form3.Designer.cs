@@ -42,8 +42,10 @@
             this.textCodingSchemeFile = new System.Windows.Forms.RichTextBox();
             this.back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -51,8 +53,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(333, 28);
+            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.Location = new System.Drawing.Point(170, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(163, 27);
             this.label4.TabIndex = 24;
@@ -60,7 +62,7 @@
             // 
             // browsCodingScheme
             // 
-            this.browsCodingScheme.BackColor = System.Drawing.Color.Red;
+            this.browsCodingScheme.BackColor = System.Drawing.Color.Maroon;
             this.browsCodingScheme.Cursor = System.Windows.Forms.Cursors.Hand;
             this.browsCodingScheme.FlatAppearance.BorderSize = 0;
             this.browsCodingScheme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -101,7 +103,7 @@
             // 
             // merge
             // 
-            this.merge.BackColor = System.Drawing.Color.Red;
+            this.merge.BackColor = System.Drawing.Color.Maroon;
             this.merge.Cursor = System.Windows.Forms.Cursors.Hand;
             this.merge.FlatAppearance.BorderSize = 0;
             this.merge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,7 +118,7 @@
             // 
             // browseCompressed
             // 
-            this.browseCompressed.BackColor = System.Drawing.Color.Red;
+            this.browseCompressed.BackColor = System.Drawing.Color.Maroon;
             this.browseCompressed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.browseCompressed.FlatAppearance.BorderSize = 0;
             this.browseCompressed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -132,7 +134,7 @@
             // 
             // deCompress
             // 
-            this.deCompress.BackColor = System.Drawing.Color.Red;
+            this.deCompress.BackColor = System.Drawing.Color.Maroon;
             this.deCompress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deCompress.FlatAppearance.BorderSize = 0;
             this.deCompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,7 +191,7 @@
             // 
             // back
             // 
-            this.back.BackColor = System.Drawing.Color.Red;
+            this.back.BackColor = System.Drawing.Color.Maroon;
             this.back.Cursor = System.Windows.Forms.Cursors.Hand;
             this.back.FlatAppearance.BorderSize = 0;
             this.back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -214,6 +216,15 @@
             this.panel2.Size = new System.Drawing.Size(904, 68);
             this.panel2.TabIndex = 36;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(227, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(489, 68);
+            this.panel3.TabIndex = 37;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,10 +232,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 522);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.back);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
@@ -232,6 +243,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +265,6 @@
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RichTextBox textCodingSchemeFile;
+        private System.Windows.Forms.Panel panel3;
     }
 }

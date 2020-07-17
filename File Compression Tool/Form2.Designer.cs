@@ -40,8 +40,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -49,8 +51,8 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Elephant", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(334, 22);
+            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.Location = new System.Drawing.Point(198, 18);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 31);
             this.label4.TabIndex = 32;
@@ -85,7 +87,7 @@
             // 
             // mergeButton
             // 
-            this.mergeButton.BackColor = System.Drawing.Color.Red;
+            this.mergeButton.BackColor = System.Drawing.Color.Maroon;
             this.mergeButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mergeButton.FlatAppearance.BorderSize = 0;
             this.mergeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -100,7 +102,7 @@
             // 
             // browsFile
             // 
-            this.browsFile.BackColor = System.Drawing.Color.Red;
+            this.browsFile.BackColor = System.Drawing.Color.Maroon;
             this.browsFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.browsFile.FlatAppearance.BorderSize = 0;
             this.browsFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -116,7 +118,7 @@
             // 
             // compressButton
             // 
-            this.compressButton.BackColor = System.Drawing.Color.Red;
+            this.compressButton.BackColor = System.Drawing.Color.Maroon;
             this.compressButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.compressButton.FlatAppearance.BorderSize = 0;
             this.compressButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -136,7 +138,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 50);
+            this.label1.Location = new System.Drawing.Point(35, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 27);
             this.label1.TabIndex = 26;
@@ -157,14 +159,14 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.showINFolderLinkLb);
             this.panel1.Controls.Add(this.mergeButton);
-            this.panel1.Location = new System.Drawing.Point(40, 80);
+            this.panel1.Location = new System.Drawing.Point(40, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 301);
             this.panel1.TabIndex = 33;
             // 
             // backButton
             // 
-            this.backButton.BackColor = System.Drawing.Color.Red;
+            this.backButton.BackColor = System.Drawing.Color.Maroon;
             this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.backButton.FlatAppearance.BorderSize = 0;
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,10 +185,19 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.browsFile);
             this.panel2.Controls.Add(this.compressButton);
-            this.panel2.Location = new System.Drawing.Point(40, 408);
+            this.panel2.Location = new System.Drawing.Point(40, 425);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(870, 68);
             this.panel2.TabIndex = 35;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Location = new System.Drawing.Point(233, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(546, 68);
+            this.panel3.TabIndex = 32;
             // 
             // Form2
             // 
@@ -195,10 +206,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 522);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -206,6 +217,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +237,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

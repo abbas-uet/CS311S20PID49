@@ -41,7 +41,7 @@ namespace File_Compression_Tool
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            //panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
         }
 

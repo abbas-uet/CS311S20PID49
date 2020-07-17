@@ -62,7 +62,7 @@
             // 
             // mainDecompress
             // 
-            this.mainDecompress.BackColor = System.Drawing.Color.Red;
+            this.mainDecompress.BackColor = System.Drawing.Color.Maroon;
             this.mainDecompress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mainDecompress.FlatAppearance.BorderSize = 0;
             this.mainDecompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -79,7 +79,7 @@
             // 
             // mainCompress
             // 
-            this.mainCompress.BackColor = System.Drawing.Color.Red;
+            this.mainCompress.BackColor = System.Drawing.Color.Maroon;
             this.mainCompress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mainCompress.FlatAppearance.BorderSize = 0;
             this.mainCompress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -36,6 +36,7 @@ namespace File_Compression_Tool
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
+            panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
 
         }
 

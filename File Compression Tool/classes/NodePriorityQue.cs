@@ -30,22 +30,6 @@ namespace File_Compression_Tool
 				}
 				return this;
 			}
-			else if (tail.getfrequency() <= ptr.getfrequency())
-			{
-				if (top == tail)
-				{
-					tail.next = ptr;
-					tail = tail.next;
-					top.next = tail;
-					ptr = null;
-				}
-				else
-				{
-					tail.next = ptr;
-					tail = ptr;
-					ptr = null;
-				}
-			}
 			else if (top.getfrequency() >= ptr.getfrequency())
 			{
 				ptr.next = top;
@@ -57,7 +41,7 @@ namespace File_Compression_Tool
 				Node_Class rptr = new Node_Class();
 				Node_Class bptr = new Node_Class();
 				rptr = bptr = top;
-				while (rptr.getfrequency() <= ptr.getfrequency())
+				while (rptr.getfrequency() < ptr.getfrequency())
 				{
 					if (rptr.next == null)
 					{

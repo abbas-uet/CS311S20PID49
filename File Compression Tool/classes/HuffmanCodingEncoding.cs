@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace File_Compression_Tool.classes
         public NodePriorityQue nodearr=new NodePriorityQue();
         public Huffcodes[] huffcode = new Huffcodes[128];
 
+       
         public void makeNodes(string a, int[] fre, int size)
         {
             for (int i = 0; i < size; i++)
@@ -48,20 +50,20 @@ namespace File_Compression_Tool.classes
                 buildTree(nodearr);
             }
         }
-        Boolean[] getCorrectChar(Boolean[] c, int index)
+        BitArray getCorrectChar(BitArray c, int index)
         {
-            Boolean[] a = new Boolean[index];
+            BitArray a = new BitArray(index);
             for (int i = 0; i < index; i++)
             {
                 a[i] = c[i];
             }
             return a;
         }
-        public void Encoding(Node_Class ptr, Boolean[] code, int index)
+        public void Encoding(Node_Class ptr, BitArray code, int index)
         {
             if (ptr.left != null)
             {
-                code[index] = false;
+                code[index] =false ;
                 Encoding(ptr.left, code, index + 1);
             }
             if (ptr.right != null)
@@ -76,7 +78,7 @@ namespace File_Compression_Tool.classes
                 an++;
             }
         }
-        public void Decoding(Node_Class ptr, Boolean[] X, int size)
+        public void Decoding(Node_Class ptr, BitArray X, int size)
         {
             for (int i = 0; i < size; i++)
             {

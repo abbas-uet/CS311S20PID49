@@ -70,6 +70,7 @@
             this.showINFolderLinkLb.Size = new System.Drawing.Size(113, 18);
             this.showINFolderLinkLb.TabIndex = 31;
             this.showINFolderLinkLb.Text = "Show in folder";
+            this.showINFolderLinkLb.Click += new System.EventHandler(this.showINFolderLinkLb_Click);
             this.showINFolderLinkLb.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.showINFolderLinkLb.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 

@@ -87,6 +87,7 @@
             this.show_In_Folder_link_lb.Size = new System.Drawing.Size(113, 18);
             this.show_In_Folder_link_lb.TabIndex = 22;
             this.show_In_Folder_link_lb.Text = "Show in folder";
+            this.show_In_Folder_link_lb.Click += new System.EventHandler(this.show_In_Folder_link_lb_Click);
             this.show_In_Folder_link_lb.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.show_In_Folder_link_lb.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
@@ -146,6 +147,7 @@
             this.deCompress.TabIndex = 18;
             this.deCompress.Text = "De Compress";
             this.deCompress.UseVisualStyleBackColor = false;
+            this.deCompress.Click += new System.EventHandler(this.deCompress_Click);
             // 
             // label1
             // 

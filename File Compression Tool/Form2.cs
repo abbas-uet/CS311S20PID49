@@ -54,6 +54,8 @@ namespace File_Compression_Tool
 
         private void button4_Click(object sender, EventArgs e)
         {
+            huffmanCodingEncoding.delete();
+            huffmanCodingEncoding = null;
             this.Hide();
             new Form1().Show();
         }
@@ -109,11 +111,13 @@ namespace File_Compression_Tool
             Stream astream = new FileStream(ansubdir+@"\Coding Scheme.txt", FileMode.OpenOrCreate);
 
             StreamWriter abw = new StreamWriter(astream);
-            StreamWriter abw = new (astream);
             for(int i=0;i< huffmanCodingEncoding.an; i++)
             {
                 char a = huffmanCodingEncoding.huffcode[i].getchar();
                 abw.Write(a);
+                abw.Write(" : ");
+                int f = huffmanCodingEncoding.huffcode[i].getFrequency();
+                abw.Write(f);
                 abw.Write(" : ");
                 BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
                 foreach (bool b in arr)

@@ -33,6 +33,12 @@ namespace File_Compression_Tool.classes
                 
             }
         }
+        public void makeNodes(char c, int fre)
+        {
+            Node_Class node = new Node_Class(c, fre);
+            nodearr.add(node);
+            node = null;
+        }
         public void buildTree(NodePriorityQue nodearr)
         {
             if (nodearr.getTop() == nodearr.getTail())
@@ -78,19 +84,36 @@ namespace File_Compression_Tool.classes
                 an++;
             }
         }
-        public void Decoding(Node_Class ptr, BitArray X, int size)
+        public String Decoding(Node_Class ptr, BitArray X, int size)
         {
+            String decoded = "" ;
             for (int i = 0; i < size; i++)
             {
-                if (X[i] == false)
-                    ptr = ptr.left;
-                else
-                    ptr = ptr.right;
-
-                if (ptr.left == null && ptr.right == null)
+                if (ptr != null)
                 {
-                    ptr = top;
+                    if (X[i] == false)
+                        ptr = ptr.left;
+                    else
+                        ptr = ptr.right;
+
+                    if (ptr.left == null && ptr.right == null)
+                    {
+                        decoded = decoded + ptr.getcharacter();
+                        ptr = top;
+                    }
                 }
+            }
+            return decoded;
+        }
+        public void delete()
+        {
+            Node_Class node = new Node_Class();
+            node = nodearr.getTop();
+            while (node != null)
+            {
+                node = top.next;
+                top = null;
+                top=node;
             }
         }
     }

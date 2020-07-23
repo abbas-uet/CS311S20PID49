@@ -18,7 +18,7 @@ namespace File_Compression_Tool
         classes.HuffmanCodingEncoding huffman = new classes.HuffmanCodingEncoding();
         private String filename_;
         private String compressed_file_text;
-        private String [] strings_code=new String[256];
+        private String[] strings_code = new String[256];
         BitArray bitArray;
         public Form3()
         {
@@ -61,12 +61,12 @@ namespace File_Compression_Tool
                 compressed_file_text = File.ReadAllText(openFileDialog.FileName);
                 textCompresssedFile.Text = compressed_file_text;
                 bitArray = new BitArray(compressed_file_text.Length);
-                for(int i=0;i< compressed_file_text.Length; i++)
+                for (int i = 0; i < compressed_file_text.Length; i++)
                 {
-                    char c= compressed_file_text[i];
+                    char c = compressed_file_text[i];
                     if (c == '1')
                         bitArray[i] = true;
-                    else if(c=='0')
+                    else if (c == '0')
                         bitArray[i] = false;
                 }
             }
@@ -85,17 +85,17 @@ namespace File_Compression_Tool
 
         private void extractCodes(string[] str)
         {
-            for(int i = 0; i < str.Length; i++)
+            for (int i = 0; i < str.Length; i++)
             {
-                char[] chr = { ' ',':',' ' };
-                String[] splited= str[i].Trim().Split(chr,3, StringSplitOptions.RemoveEmptyEntries);
+                char[] chr = { ' ', ':', ' ' };
+                String[] splited = str[i].Trim().Split(chr, 3, StringSplitOptions.RemoveEmptyEntries);
                 huffman.makeNodes(splited[0][0], int.Parse(splited[1]));
             }
         }
 
         private void deCompress_Click(object sender, EventArgs e)
         {
-            
+
             extractCodes(strings_code);
             huffman.buildTree(huffman.nodearr);
             huffman.Decoding(huffman.nodearr.getTop(), bitArray, bitArray.Length);
@@ -103,7 +103,7 @@ namespace File_Compression_Tool
 
         private void show_In_Folder_link_lb_Click(object sender, EventArgs e)
         {
-            string root = Directory.GetDirectories(filename_.Remove(filename_.Length - 4, 4),);
+            _ = Directory.GetDirectories(filename_.Remove(filename_.Length - 4, 4));
         }
     }
 }

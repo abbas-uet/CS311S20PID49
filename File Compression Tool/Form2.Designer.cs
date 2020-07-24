@@ -41,6 +41,7 @@
             this.backButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -137,11 +138,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Baskerville Old Face", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(35, 73);
+            this.label1.Location = new System.Drawing.Point(36, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 27);
+            this.label1.Size = new System.Drawing.Size(49, 22);
             this.label1.TabIndex = 26;
             this.label1.Text = "File:";
             // 
@@ -149,7 +150,7 @@
             // 
             this.textOfFile.Location = new System.Drawing.Point(0, 0);
             this.textOfFile.Name = "textOfFile";
-            this.textOfFile.Size = new System.Drawing.Size(455, 300);
+            this.textOfFile.Size = new System.Drawing.Size(455, 301);
             this.textOfFile.TabIndex = 25;
             this.textOfFile.Text = "";
             // 
@@ -160,7 +161,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.showINFolderLinkLb);
             this.panel1.Controls.Add(this.mergeButton);
-            this.panel1.Location = new System.Drawing.Point(40, 103);
+            this.panel1.Location = new System.Drawing.Point(40, 135);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 301);
             this.panel1.TabIndex = 33;
@@ -186,7 +187,7 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.browsFile);
             this.panel2.Controls.Add(this.compressButton);
-            this.panel2.Location = new System.Drawing.Point(40, 425);
+            this.panel2.Location = new System.Drawing.Point(40, 442);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(870, 68);
             this.panel2.TabIndex = 35;
@@ -195,10 +196,18 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Location = new System.Drawing.Point(233, 12);
+            this.panel3.Location = new System.Drawing.Point(233, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(546, 68);
             this.panel3.TabIndex = 32;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(180, 105);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(315, 20);
+            this.textBox1.TabIndex = 36;
             // 
             // Form2
             // 
@@ -207,6 +216,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1007, 522);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.backButton);
@@ -239,5 +249,6 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

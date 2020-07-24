@@ -45,10 +45,15 @@ namespace File_Compression_Tool
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK){ 
+            openFileDialog.Filter = "TXT|*.txt";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = openFileDialog.FileName;
                 fileName_ = openFileDialog.FileName;
                 normalText = File.ReadAllText(openFileDialog.FileName);
                 textOfFile.Text = normalText;
+
             }
         }
 

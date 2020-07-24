@@ -55,8 +55,11 @@ namespace File_Compression_Tool
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "TXT|*.txt";
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                textBox1.Text = openFileDialog.FileName;
                 filename_ = openFileDialog.FileName;
                 compressed_file_text = File.ReadAllText(openFileDialog.FileName);
                 textCompresssedFile.Text = compressed_file_text;
@@ -75,8 +78,11 @@ namespace File_Compression_Tool
         private void button4_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "TXT|*.txt";
+
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                textBox2.Text = openFileDialog.FileName;
                 String text = File.ReadAllText(openFileDialog.FileName);
                 strings_code = File.ReadAllLines(openFileDialog.FileName);
                 textCodingSchemeFile.Text = text;

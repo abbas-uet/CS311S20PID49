@@ -39,5 +39,6 @@ namespace File_Compression_Tool
             this.Hide();
             new Form3().Show();
         }
+
     }
 }

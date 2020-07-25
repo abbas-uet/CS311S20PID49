@@ -271,7 +271,9 @@
             this.Controls.Add(this.back);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);

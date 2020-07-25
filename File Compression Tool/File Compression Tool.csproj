@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="classes\Huffcodes.cs" />
     <Compile Include="classes\HuffmanCodingEncoding.cs" />
+    <Compile Include="folderPath.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

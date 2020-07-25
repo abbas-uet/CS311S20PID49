@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace File_Compression_Tool
         private String compressed_file_text;
         private String[] strings_code = new String[256];
         BitArray bitArray;
+        String deCompressedText;
         public Form3()
         {
             InitializeComponent();
@@ -104,12 +106,48 @@ namespace File_Compression_Tool
 
             extractCodes(strings_code);
             huffman.buildTree(huffman.nodearr);
-            huffman.Decoding(huffman.nodearr.getTop(), bitArray, bitArray.Length);
+            deCompressedText=huffman.Decoding(huffman.nodearr.getTop(), bitArray, bitArray.Length);
+            MessageBox.Show("Decompressed Successfully!");
         }
 
-        private void show_In_Folder_link_lb_Click(object sender, EventArgs e)
+        private void OpenFolder(string folderPath)
         {
-            _ = Directory.GetDirectories(filename_.Remove(filename_.Length - 4, 4));
+            if (Directory.Exists(folderPath))
+            {
+                var psi = new ProcessStartInfo();
+                psi.FileName = @"c:\windows\system32\explorer.exe";
+                psi.Arguments = folderPath;
+                Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
+            }
+        }
+
+
+private void show_In_Folder_link_lb_Click(object sender, EventArgs e)
+        {
+            
+            String root =(filename_.Remove(filename_.Length - 30, 30));
+            String subdir = root+@"Decompressed File";
+            if (!Directory.Exists(root))
+            {
+                Directory.CreateDirectory(root);
+            }
+            if (!Directory.Exists(subdir))
+            {
+                Directory.CreateDirectory(subdir);
+            }
+            Stream astream = new FileStream(subdir + @"\Decompressed Text.txt", FileMode.OpenOrCreate);
+            StreamWriter abw = new StreamWriter(astream);
+            foreach(char i in deCompressedText)
+            {
+            abw.Write(i);
+            }
+            abw.Flush();
+            abw.Close();
+            OpenFolder(subdir);
         }
     }
 }

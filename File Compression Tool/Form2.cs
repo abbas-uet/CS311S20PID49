@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -90,7 +91,22 @@ namespace File_Compression_Tool
                 };
                 coded = coded + chara + " " + codee;
             }
-            textOfFile.Text = coded;
+            MessageBox.Show("Compressed Successfully!");
+        }
+
+        private void OpenFolder(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
+                var psi = new ProcessStartInfo();
+                psi.FileName = @"c:\windows\system32\explorer.exe";
+                psi.Arguments = folderPath;
+                Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
+            }
         }
 
         private void showINFolderLinkLb_Click(object sender, EventArgs e)
@@ -158,6 +174,13 @@ namespace File_Compression_Tool
             }
             bw.Flush();
             bw.Close();
+
+            OpenFolder(root);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

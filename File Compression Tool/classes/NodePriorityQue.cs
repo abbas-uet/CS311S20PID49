@@ -86,9 +86,16 @@ namespace File_Compression_Tool
 			}
 			else
 			{
-				Node_Class ptr = top;
-				top = top.next;
+				Node_Class rptr = top;
+				while (rptr.next != tail)
+				{
+					rptr = rptr.next;
+				}
+				Node_Class ptr = tail;
+				tail = rptr;
+				tail.next = null;
 				ptr.next = null;
+				rptr = null;
 				return ptr;
 			}
 		}

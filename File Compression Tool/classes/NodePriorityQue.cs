@@ -36,9 +36,21 @@ namespace File_Compression_Tool
 				top = ptr;
 				ptr = null;
 			}else if(tail.getfrequency()>=ptr.getfrequency()){
-				tail.next = ptr;
-				tail.next = null;
-				ptr = null;
+				if (top == tail)
+				{
+					top.next = ptr;
+					tail = ptr;
+					tail.next = null;
+					ptr = null;
+				}
+				else
+				{
+					tail.next = ptr;
+					tail = tail.next;
+					tail.next = null;
+					ptr = null;
+				}
+
 			}
 			else
 			{

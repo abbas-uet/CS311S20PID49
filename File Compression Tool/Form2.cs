@@ -18,7 +18,7 @@ namespace File_Compression_Tool
         classes.HuffmanCodingEncoding huffmanCodingEncoding=new classes.HuffmanCodingEncoding();
         public BitArray codeofCharacter = new BitArray(256);
         string normalText;
-        static int SIZE = 256;
+        char [] charString;
         String fileName_;
         public Form2()
         {
@@ -67,18 +67,32 @@ namespace File_Compression_Tool
         }
         private int[] getFrequency(string str)
         {
-            int[] frequecyArr = new int[SIZE];
-            int n = str.Length;
-            for(int i = 0; i < n; i++)
+            int [] frequecyArr = new int[str.Length];
+            int i, j;
+
+            //Converts given string into character array  
+            charString = str.ToCharArray();
+
+            for (i = 0; i < str.Length; i++)
             {
-                frequecyArr[str[i]]++;
+                frequecyArr[i] = 1;
+                for (j = i + 1; j < str.Length; j++)
+                {
+                    if (charString[i] == charString[j])
+                    {
+                        frequecyArr[i]++;
+
+                        //Set string[j] to 0 to avoid printing visited character  
+                        charString[j] = '0';
+                    }
+                }
             }
             return frequecyArr;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText), normalText.Length);
+            huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText),charString, normalText.Length);
             huffmanCodingEncoding.buildTree(huffmanCodingEncoding.nodearr);
             huffmanCodingEncoding.Encoding(huffmanCodingEncoding.top, codeofCharacter, 0);
             string coded="";
@@ -91,7 +105,7 @@ namespace File_Compression_Tool
                 };
                 coded = coded + chara + " " + codee;
             }
-            MessageBox.Show("Compressed Successfully!");
+            MessageBox.Show("Compressed Succesfully!");
         }
 
         private void OpenFolder(string folderPath)

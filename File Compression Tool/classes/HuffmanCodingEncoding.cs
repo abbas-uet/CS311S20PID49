@@ -19,14 +19,13 @@ namespace File_Compression_Tool.classes
         public Huffcodes[] huffcode = new Huffcodes[128];
 
        
-        public void makeNodes(string a, int[] fre, int size)
+        public void makeNodes(string a, int[] fre,char[] charStr, int size)
         {
             for (int i = 0; i < size; i++)
             {
-                if (fre[a[i]] != 0)
+                if (charStr[i] != '0')
                 {
-                    Node_Class node = new Node_Class(a[i], fre[a[i]]);
-                    fre[a[i]] = 0;
+                    Node_Class node = new Node_Class(a[i], fre[i]);
                     nodearr.add(node);
                     node = null;
                 }

@@ -101,6 +101,7 @@
             this.mergeButton.TabIndex = 29;
             this.mergeButton.Text = "Merge";
             this.mergeButton.UseVisualStyleBackColor = false;
+            this.mergeButton.Click += new System.EventHandler(this.mergeButton_Click);
             // 
             // browsFile
             // 

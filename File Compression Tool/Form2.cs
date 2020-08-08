@@ -21,6 +21,9 @@ namespace File_Compression_Tool
         char [] charString;
         String sequence;
         String fileName_;
+        string root;
+        string subdir;
+        string ansubdir;
         public Form2()
         {
             InitializeComponent();
@@ -108,28 +111,9 @@ namespace File_Compression_Tool
                 coded = coded + chara + " " + codee;
             }
             MessageBox.Show("Compressed Succesfully!");
-        }
-
-        private void OpenFolder(string folderPath)
-        {
-            if (Directory.Exists(folderPath))
-            {
-                var psi = new ProcessStartInfo();
-                psi.FileName = @"c:\windows\system32\explorer.exe";
-                psi.Arguments = folderPath;
-                Process.Start(psi);
-            }
-            else
-            {
-                MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
-            }
-        }
-
-        private void showINFolderLinkLb_Click(object sender, EventArgs e)
-        {
-            string root = fileName_.Remove(fileName_.Length-4,4);
-            string subdir = root+ @"\Compressed File";
-            string ansubdir = root+ @"\Coding Scheme File";
+            root = fileName_.Remove(fileName_.Length - 4, 4);
+            subdir = root + @"\Compressed File";
+            ansubdir = root + @"\Coding Scheme File";
             // If directory does not exist, create it. 
             if (!Directory.Exists(root))
             {
@@ -143,12 +127,12 @@ namespace File_Compression_Tool
             {
                 Directory.CreateDirectory(ansubdir);
             }
-            
-            
-            Stream astream = new FileStream(ansubdir+@"\Coding Scheme.txt", FileMode.OpenOrCreate);
+
+
+            Stream astream = new FileStream(ansubdir + @"\Coding Scheme.txt", FileMode.OpenOrCreate);
 
             StreamWriter abw = new StreamWriter(astream);
-            for(int ab = 0; ab < sequence.Length; ab++)
+            for (int ab = 0; ab < sequence.Length; ab++)
             {
 
                 for (int i = 0; i < huffmanCodingEncoding.an; i++)
@@ -181,9 +165,9 @@ namespace File_Compression_Tool
             for (int i = 0; i < normalText.Length; ++i)
             {
                 int j;
-                for (j=0; j < huffmanCodingEncoding.an; ++j)
+                for (j = 0; j < huffmanCodingEncoding.an; ++j)
                 {
-                    if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar()) 
+                    if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
                         break;
                 }
                 BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
@@ -192,18 +176,104 @@ namespace File_Compression_Tool
                     if (b == true)
                         bw.Write('1');
                     else
-                        bw.Write('0'); 
+                        bw.Write('0');
                 }
             }
             bw.Flush();
             bw.Close();
+        }
 
+        private void OpenFolder(string folderPath)
+        {
+            if (Directory.Exists(folderPath))
+            {
+                var psi = new ProcessStartInfo();
+                psi.FileName = @"c:\windows\system32\explorer.exe";
+                psi.Arguments = folderPath;
+                Process.Start(psi);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
+            }
+        }
+
+        private void showINFolderLinkLb_Click(object sender, EventArgs e)
+        {
             OpenFolder(root);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void mergeButton_Click(object sender, EventArgs e)
+        {
+            string aroot = fileName_.Remove(fileName_.Length - 4, 4);
+            string aSubDir = aroot + @"\Bonus Task";
+            // If directory does not exist, create it. 
+            if (!Directory.Exists(aroot))
+            {
+                Directory.CreateDirectory(aroot);
+            }
+            if (!Directory.Exists(aSubDir))
+            {
+                Directory.CreateDirectory(aSubDir);
+            }
+
+
+            Stream astream = new FileStream(aSubDir + @"\Bonus Task.txt", FileMode.OpenOrCreate);
+
+            StreamWriter abw = new StreamWriter(astream);
+            for (int ab = 0; ab < sequence.Length; ab++)
+            {
+
+                for (int i = 0; i < huffmanCodingEncoding.an; i++)
+                {
+                    if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
+                    {
+                        char a = huffmanCodingEncoding.huffcode[i].getchar();
+                        abw.Write(a);
+                        abw.Write("::");
+                        int f = huffmanCodingEncoding.huffcode[i].getFrequency();
+                        abw.Write(f);
+                        abw.Write("::");
+                        BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
+                        foreach (bool b in arr)
+                        {
+                            if (b == true)
+                                abw.Write('1');
+                            else
+                                abw.Write('0');
+                        }
+                        abw.Write('\n');
+                    }
+                }
+            }
+
+            abw.Write("----------------------------\n");
+            for (int i = 0; i < normalText.Length; ++i)
+            {
+                int j;
+                for (j = 0; j < huffmanCodingEncoding.an; ++j)
+                {
+                    if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
+                        break;
+                }
+                BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
+                foreach (bool b in arr)
+                {
+                    if (b == true)
+                        abw.Write('1');
+                    else
+                        abw.Write('0');
+                }
+            }
+
+            abw.Flush();
+            abw.Close();
+            OpenFolder(aroot);
         }
     }
 }

@@ -119,6 +119,7 @@
             this.merge.TabIndex = 20;
             this.merge.Text = "Merge";
             this.merge.UseVisualStyleBackColor = false;
+            this.merge.Click += new System.EventHandler(this.merge_Click);
             // 
             // browseCompressed
             // 

@@ -95,8 +95,8 @@ namespace File_Compression_Tool
         {
             for (int i = 0; i < str.Length; i++)
             {
-                char[] chr = { ' ', ':', ' ' };
-                String[] splited = str[i].Trim().Split(chr, 3, StringSplitOptions.RemoveEmptyEntries);
+                char[] chr = { ':',':' };
+                String[] splited = str[i].Split(chr, 3, StringSplitOptions.RemoveEmptyEntries);
                 huffman.makeNodes(splited[0][0], int.Parse(splited[1]));
             }
         }

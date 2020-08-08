@@ -19,6 +19,17 @@ namespace File_Compression_Tool.classes
         public Huffcodes[] huffcode = new Huffcodes[128];
 
        
+        public String getSequence(NodePriorityQue nodear)
+        {
+            String str = "";
+            Node_Class ptr = nodear.getTop();
+            while (ptr != null)
+            {
+                str = str + ptr.getcharacter();
+                ptr = ptr.next;
+            }
+            return str;
+        }
         public void makeNodes(string a, int[] fre,char[] charStr, int size)
         {
             for (int i = 0; i < size; i++)

@@ -19,6 +19,7 @@ namespace File_Compression_Tool
         public BitArray codeofCharacter = new BitArray(256);
         string normalText;
         char [] charString;
+        String sequence;
         String fileName_;
         public Form2()
         {
@@ -93,6 +94,7 @@ namespace File_Compression_Tool
         private void button1_Click(object sender, EventArgs e)
         {
             huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText),charString, normalText.Length);
+            sequence=huffmanCodingEncoding.getSequence(huffmanCodingEncoding.nodearr);
             huffmanCodingEncoding.buildTree(huffmanCodingEncoding.nodearr);
             huffmanCodingEncoding.Encoding(huffmanCodingEncoding.top, codeofCharacter, 0);
             string coded="";
@@ -146,23 +148,30 @@ namespace File_Compression_Tool
             Stream astream = new FileStream(ansubdir+@"\Coding Scheme.txt", FileMode.OpenOrCreate);
 
             StreamWriter abw = new StreamWriter(astream);
-            for(int i=0;i< huffmanCodingEncoding.an; i++)
+            for(int ab = 0; ab < sequence.Length; ab++)
             {
-                char a = huffmanCodingEncoding.huffcode[i].getchar();
-                abw.Write(a);
-                abw.Write(" : ");
-                int f = huffmanCodingEncoding.huffcode[i].getFrequency();
-                abw.Write(f);
-                abw.Write(" : ");
-                BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
-                foreach (bool b in arr)
+
+                for (int i = 0; i < huffmanCodingEncoding.an; i++)
                 {
-                    if (b == true)
-                        abw.Write('1');
-                    else
-                        abw.Write('0');
+                    if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
+                    {
+                        char a = huffmanCodingEncoding.huffcode[i].getchar();
+                        abw.Write(a);
+                        abw.Write("::");
+                        int f = huffmanCodingEncoding.huffcode[i].getFrequency();
+                        abw.Write(f);
+                        abw.Write("::");
+                        BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
+                        foreach (bool b in arr)
+                        {
+                            if (b == true)
+                                abw.Write('1');
+                            else
+                                abw.Write('0');
+                        }
+                        abw.Write('\n');
+                    }
                 }
-                abw.Write('\n');
             }
             abw.Flush();
             abw.Close();

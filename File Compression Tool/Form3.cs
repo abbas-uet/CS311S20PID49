@@ -100,6 +100,10 @@ namespace File_Compression_Tool
             {
                 char[] chr = { ':',':' };
                 String[] splited = str[i].Split(chr, 3, StringSplitOptions.RemoveEmptyEntries);
+                if (splited[0].Equals("/r")) 
+                    splited[0] = "\r" ;
+                else if(splited[0].Equals("/n")) 
+                    splited[0] = "\n";
                 huffman.makeNodes(splited[0][0], int.Parse(splited[1]));
             }
         }

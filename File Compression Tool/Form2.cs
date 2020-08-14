@@ -140,7 +140,12 @@ namespace File_Compression_Tool
                     if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
                     {
                         char a = huffmanCodingEncoding.huffcode[i].getchar();
-                        abw.Write(a);
+                        if (a.Equals('\r')) 
+                            abw.Write("/r");
+                        else if (a.Equals('\n')) 
+                            abw.Write("/n");
+                        else 
+                            abw.Write(a);
                         abw.Write("::");
                         int f = huffmanCodingEncoding.huffcode[i].getFrequency();
                         abw.Write(f);

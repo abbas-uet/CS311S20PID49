@@ -24,6 +24,8 @@ namespace File_Compression_Tool
         string root;
         string subdir;
         string ansubdir;
+        bool compressClick = false;
+        bool getFiles = false;
         public Form2()
         {
             InitializeComponent();
@@ -58,7 +60,7 @@ namespace File_Compression_Tool
                 fileName_ = openFileDialog.FileName;
                 normalText = File.ReadAllText(openFileDialog.FileName);
                 textOfFile.Text = normalText;
-
+                getFiles = true;
             }
         }
 
@@ -96,96 +98,106 @@ namespace File_Compression_Tool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText),charString, normalText.Length);
-            sequence=huffmanCodingEncoding.getSequence(huffmanCodingEncoding.nodearr);
-            huffmanCodingEncoding.buildTree(huffmanCodingEncoding.nodearr);
-            huffmanCodingEncoding.Encoding(huffmanCodingEncoding.top, codeofCharacter, 0);
-            string coded="";
-            for(int i = 0; i < huffmanCodingEncoding.an; i++)
+            if (getFiles==false)
             {
-                char chara = huffmanCodingEncoding.huffcode[i].getchar();
-                string codee="";
-                for (int j = 0; j < huffmanCodingEncoding.huffcode[i].getCode().Count; j++) {
-                    codee = codee + huffmanCodingEncoding.huffcode[i].getCode()[j];
-                };
-                coded = coded + chara + " " + codee;
+                MessageBox.Show("Please Select a File First!");
             }
-            MessageBox.Show("Compressed Succesfully!");
-            root = fileName_.Remove(fileName_.Length - 4, 4);
-            subdir = root + @"\Compressed File";
-            ansubdir = root + @"\Coding Scheme File";
-            // If directory does not exist, create it. 
-            if (!Directory.Exists(root))
+            else
             {
-                Directory.CreateDirectory(root);
-            }
-            if (!Directory.Exists(subdir))
-            {
-                Directory.CreateDirectory(subdir);
-            }
-            if (!Directory.Exists(ansubdir))
-            {
-                Directory.CreateDirectory(ansubdir);
-            }
-
-
-            Stream astream = new FileStream(ansubdir + @"\Coding Scheme.txt", FileMode.OpenOrCreate);
-
-            StreamWriter abw = new StreamWriter(astream);
-            for (int ab = 0; ab < sequence.Length; ab++)
-            {
-
+                compressClick = true;
+                huffmanCodingEncoding.makeNodes(normalText, getFrequency(normalText), charString, normalText.Length);
+                sequence = huffmanCodingEncoding.getSequence(huffmanCodingEncoding.nodearr);
+                huffmanCodingEncoding.buildTree(huffmanCodingEncoding.nodearr);
+                huffmanCodingEncoding.Encoding(huffmanCodingEncoding.top, codeofCharacter, 0);
+                string coded = "";
                 for (int i = 0; i < huffmanCodingEncoding.an; i++)
                 {
-                    if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
+                    char chara = huffmanCodingEncoding.huffcode[i].getchar();
+                    string codee = "";
+                    for (int j = 0; j < huffmanCodingEncoding.huffcode[i].getCode().Count; j++)
                     {
-                        char a = huffmanCodingEncoding.huffcode[i].getchar();
-                        if (a.Equals('\r')) 
-                            abw.Write("/r");
-                        else if (a.Equals('\n')) 
-                            abw.Write("/n");
-                        else 
-                            abw.Write(a);
-                        abw.Write("::");
-                        int f = huffmanCodingEncoding.huffcode[i].getFrequency();
-                        abw.Write(f);
-                        abw.Write("::");
-                        BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
-                        foreach (bool b in arr)
+                        codee = codee + huffmanCodingEncoding.huffcode[i].getCode()[j];
+                    };
+                    coded = coded + chara + " " + codee;
+                }
+                MessageBox.Show("Compressed Succesfully!");
+                root = fileName_.Remove(fileName_.Length - 4, 4);
+                subdir = root + @"\Compressed File";
+                ansubdir = root + @"\Coding Scheme File";
+                // If directory does not exist, create it. 
+                if (!Directory.Exists(root))
+                {
+                    Directory.CreateDirectory(root);
+                }
+                if (!Directory.Exists(subdir))
+                {
+                    Directory.CreateDirectory(subdir);
+                }
+                if (!Directory.Exists(ansubdir))
+                {
+                    Directory.CreateDirectory(ansubdir);
+                }
+
+
+                Stream astream = new FileStream(ansubdir + @"\Coding Scheme.txt", FileMode.OpenOrCreate);
+
+                StreamWriter abw = new StreamWriter(astream);
+                for (int ab = 0; ab < sequence.Length; ab++)
+                {
+
+                    for (int i = 0; i < huffmanCodingEncoding.an; i++)
+                    {
+                        if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
                         {
-                            if (b == true)
-                                abw.Write('1');
+                            char a = huffmanCodingEncoding.huffcode[i].getchar();
+                            if (a.Equals('\r'))
+                                abw.Write("/r");
+                            else if (a.Equals('\n'))
+                                abw.Write("/n");
                             else
-                                abw.Write('0');
+                                abw.Write(a);
+                            abw.Write("::");
+                            int f = huffmanCodingEncoding.huffcode[i].getFrequency();
+                            abw.Write(f);
+                            abw.Write("::");
+                            BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
+                            foreach (bool b in arr)
+                            {
+                                if (b == true)
+                                    abw.Write('1');
+                                else
+                                    abw.Write('0');
+                            }
+                            abw.Write('\n');
                         }
-                        abw.Write('\n');
                     }
                 }
-            }
-            abw.Flush();
-            abw.Close();
-            Stream stream = new FileStream(subdir + @"\compressed.txt", FileMode.OpenOrCreate);
+                abw.Flush();
+                abw.Close();
+                Stream stream = new FileStream(subdir + @"\compressed.txt", FileMode.OpenOrCreate);
 
-            BinaryWriter bw = new BinaryWriter(stream);
-            for (int i = 0; i < normalText.Length; ++i)
-            {
-                int j;
-                for (j = 0; j < huffmanCodingEncoding.an; ++j)
+                BinaryWriter bw = new BinaryWriter(stream);
+                for (int i = 0; i < normalText.Length; ++i)
                 {
-                    if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
-                        break;
+                    int j;
+                    for (j = 0; j < huffmanCodingEncoding.an; ++j)
+                    {
+                        if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
+                            break;
+                    }
+                    BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
+                    foreach (bool b in arr)
+                    {
+                        if (b == true)
+                            bw.Write('1');
+                        else
+                            bw.Write('0');
+                    }
                 }
-                BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
-                foreach (bool b in arr)
-                {
-                    if (b == true)
-                        bw.Write('1');
-                    else
-                        bw.Write('0');
-                }
+                bw.Flush();
+                bw.Close();
             }
-            bw.Flush();
-            bw.Close();
+            
         }
 
         private void OpenFolder(string folderPath)
@@ -215,71 +227,81 @@ namespace File_Compression_Tool
 
         private void mergeButton_Click(object sender, EventArgs e)
         {
-            string aroot = fileName_.Remove(fileName_.Length - 4, 4);
-            string aSubDir = aroot + @"\Bonus Task";
-            // If directory does not exist, create it. 
-            if (!Directory.Exists(aroot))
-            {
-                Directory.CreateDirectory(aroot);
-            }
-            if (!Directory.Exists(aSubDir))
-            {
-                Directory.CreateDirectory(aSubDir);
-            }
-
-
-            Stream astream = new FileStream(aSubDir + @"\Bonus Task.txt", FileMode.OpenOrCreate);
-
-            StreamWriter abw = new StreamWriter(astream);
-            for (int ab = 0; ab < sequence.Length; ab++)
+            if (compressClick == true)
             {
 
-                for (int i = 0; i < huffmanCodingEncoding.an; i++)
+                string aroot = fileName_.Remove(fileName_.Length - 4, 4);
+                string aSubDir = aroot + @"\Bonus Task";
+                // If directory does not exist, create it. 
+                if (!Directory.Exists(aroot))
                 {
-                    if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
+                    Directory.CreateDirectory(aroot);
+                }
+                if (!Directory.Exists(aSubDir))
+                {
+                    Directory.CreateDirectory(aSubDir);
+                }
+
+
+                Stream astream = new FileStream(aSubDir + @"\Bonus Task.txt", FileMode.OpenOrCreate);
+
+                StreamWriter abw = new StreamWriter(astream);
+                for (int ab = 0; ab < sequence.Length; ab++)
+                {
+
+                    for (int i = 0; i < huffmanCodingEncoding.an; i++)
                     {
-                        char a = huffmanCodingEncoding.huffcode[i].getchar();
-                        abw.Write(a);
-                        abw.Write("::");
-                        int f = huffmanCodingEncoding.huffcode[i].getFrequency();
-                        abw.Write(f);
-                        abw.Write("::");
-                        BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
-                        foreach (bool b in arr)
+                        if (sequence[ab] == huffmanCodingEncoding.huffcode[i].getchar())
                         {
-                            if (b == true)
-                                abw.Write('1');
-                            else
-                                abw.Write('0');
+                            char a = huffmanCodingEncoding.huffcode[i].getchar();
+                            abw.Write(a);
+                            abw.Write("::");
+                            int f = huffmanCodingEncoding.huffcode[i].getFrequency();
+                            abw.Write(f);
+                            abw.Write("::");
+                            BitArray arr = huffmanCodingEncoding.huffcode[i].getCode();
+                            foreach (bool b in arr)
+                            {
+                                if (b == true)
+                                    abw.Write('1');
+                                else
+                                    abw.Write('0');
+                            }
+                            abw.Write('\n');
                         }
-                        abw.Write('\n');
                     }
                 }
-            }
 
-            abw.Write("----------------------------\n");
-            for (int i = 0; i < normalText.Length; ++i)
+                abw.Write("----------------------------\n");
+                for (int i = 0; i < normalText.Length; ++i)
+                {
+                    int j;
+                    for (j = 0; j < huffmanCodingEncoding.an; ++j)
+                    {
+                        if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
+                            break;
+                    }
+                    BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
+                    foreach (bool b in arr)
+                    {
+                        if (b == true)
+                            abw.Write('1');
+                        else
+                            abw.Write('0');
+                    }
+                }
+
+                abw.Flush();
+                abw.Close();
+                OpenFolder(aroot);
+            }
+            else
             {
-                int j;
-                for (j = 0; j < huffmanCodingEncoding.an; ++j)
-                {
-                    if (normalText[i] == huffmanCodingEncoding.huffcode[j].getchar())
-                        break;
-                }
-                BitArray arr = huffmanCodingEncoding.huffcode[j].getCode();
-                foreach (bool b in arr)
-                {
-                    if (b == true)
-                        abw.Write('1');
-                    else
-                        abw.Write('0');
-                }
+                MessageBox.Show("Please Compress the File First!");
             }
-
-            abw.Flush();
-            abw.Close();
-            OpenFolder(aroot);
         }
+
     }
+
 }
 

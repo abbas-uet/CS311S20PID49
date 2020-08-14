@@ -25,6 +25,9 @@ namespace File_Compression_Tool
         private String[] strings_code = new String[256];
         BitArray bitArray;
         String deCompressedText;
+        bool gotboth = false;
+        bool gotone = false;
+        bool decompressClick=false;
         public Form3()
         {
             InitializeComponent();
@@ -77,6 +80,7 @@ namespace File_Compression_Tool
                     else if (c == '0')
                         bitArray[i] = false;
                 }
+                gotone = true;
             }
         }
 
@@ -92,6 +96,8 @@ namespace File_Compression_Tool
                 strings_code = File.ReadAllLines(openFileDialog.FileName);
                 textCodingSchemeFile.Text = Alltext;
             }
+            
+                gotboth = true;
         }
 
         private void extractCodes(string[] str)
@@ -110,29 +116,36 @@ namespace File_Compression_Tool
 
         private void deCompress_Click(object sender, EventArgs e)
         {
-
-            extractCodes(strings_code);
-            huffman.buildTree(huffman.nodearr);
-            deCompressedText=huffman.Decoding(huffman.nodearr.getTop(), bitArray, bitArray.Length);
-            MessageBox.Show("Decompressed Successfully!");
-            root = (filename_.Remove(filename_.Length - 30, 30));
-            subdir = root + @"Decompressed File";
-            if (!Directory.Exists(root))
+            if (gotone==false || gotboth==false)
             {
-                Directory.CreateDirectory(root);
+                MessageBox.Show("Please Select the Files First!");
             }
-            if (!Directory.Exists(subdir))
+            else
             {
-                Directory.CreateDirectory(subdir);
+                decompressClick = true;
+                extractCodes(strings_code);
+                huffman.buildTree(huffman.nodearr);
+                deCompressedText = huffman.Decoding(huffman.nodearr.getTop(), bitArray, bitArray.Length);
+                MessageBox.Show("Decompressed Successfully!");
+                root = (filename_.Remove(filename_.Length - 30, 30));
+                subdir = root + @"Decompressed File";
+                if (!Directory.Exists(root))
+                {
+                    Directory.CreateDirectory(root);
+                }
+                if (!Directory.Exists(subdir))
+                {
+                    Directory.CreateDirectory(subdir);
+                }
+                Stream astream = new FileStream(subdir + @"\Decompressed Text.txt", FileMode.OpenOrCreate);
+                StreamWriter abw = new StreamWriter(astream);
+                foreach (char i in deCompressedText)
+                {
+                    abw.Write(i);
+                }
+                abw.Flush();
+                abw.Close();
             }
-            Stream astream = new FileStream(subdir + @"\Decompressed Text.txt", FileMode.OpenOrCreate);
-            StreamWriter abw = new StreamWriter(astream);
-            foreach (char i in deCompressedText)
-            {
-                abw.Write(i);
-            }
-            abw.Flush();
-            abw.Close();
         }
 
         private void OpenFolder(string folderPath)
@@ -159,31 +172,39 @@ private void show_In_Folder_link_lb_Click(object sender, EventArgs e)
 
         private void merge_Click(object sender, EventArgs e)
         {
-            
-            string asubdir = subdir + @"\Bonus Task";
-            // If directory does not exist, create it. 
-            if (!Directory.Exists(subdir))
+            if (decompressClick == true)
             {
-                Directory.CreateDirectory(subdir);
+
+                string asubdir = subdir + @"\Bonus Task";
+                // If directory does not exist, create it. 
+                if (!Directory.Exists(subdir))
+                {
+                    Directory.CreateDirectory(subdir);
+                }
+                if (!Directory.Exists(asubdir))
+                {
+                    Directory.CreateDirectory(asubdir);
+                }
+
+
+                Stream astream = new FileStream(asubdir + @"\Bonus Task.txt", FileMode.OpenOrCreate);
+
+                StreamWriter abw = new StreamWriter(astream);
+                abw.Write(Alltext);
+
+                abw.Write("----------------------------\n");
+                abw.Write(compressed_file_text);
+
+                abw.Flush();
+                abw.Close();
+                OpenFolder(subdir);
             }
-            if (!Directory.Exists(asubdir))
+            else
             {
-                Directory.CreateDirectory(asubdir);
+                MessageBox.Show("Please Decompress it First!");
             }
-
-
-            Stream astream = new FileStream(asubdir + @"\Bonus Task.txt", FileMode.OpenOrCreate);
-
-            StreamWriter abw = new StreamWriter(astream);
-            abw.Write(Alltext);
-
-            abw.Write("----------------------------\n");
-            abw.Write(compressed_file_text);
-
-            abw.Flush();
-            abw.Close();
-            OpenFolder(subdir);
         }
+            
     }
     }
 

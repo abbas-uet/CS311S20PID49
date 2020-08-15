@@ -55,7 +55,7 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.mainDecompress);
             this.panel1.Controls.Add(this.mainCompress);
-            this.panel1.Location = new System.Drawing.Point(240, 127);
+            this.panel1.Location = new System.Drawing.Point(345, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 311);
             this.panel1.TabIndex = 9;
@@ -98,7 +98,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(116, 12);
+            this.panel2.Location = new System.Drawing.Point(221, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(561, 100);
             this.panel2.TabIndex = 10;
@@ -109,7 +109,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1007, 522);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

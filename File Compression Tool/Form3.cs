@@ -96,8 +96,7 @@ namespace File_Compression_Tool
                 strings_code = File.ReadAllLines(openFileDialog.FileName);
                 textCodingSchemeFile.Text = Alltext;
             }
-            
-                gotboth = true;
+             gotboth = true;
         }
 
         private void extractCodes(string[] str)
